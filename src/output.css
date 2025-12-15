@@ -179,32 +179,11 @@
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
-  }
-  .h-\[100\%\] {
-    height: 100%;
-  }
-  .h-\[100vh\] {
-    height: 100vh;
-  }
-  .h-full {
-    height: 100%;
-  }
-  .h-screen {
-    height: 100vh;
-  }
   .min-h-screen {
     min-height: 100vh;
   }
   .w-full {
     width: 100%;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -218,10 +197,6 @@
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .bg-sky-900 {
     background-color: var(--color-sky-900);
   }
@@ -232,13 +207,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
 }
 @layer components {
@@ -278,7 +246,7 @@
   }
   .next-btn {
     margin-top: calc(var(--spacing) * 6);
-    width: calc(1/4 * 100%);
+    min-width: calc(1/4 * 100%);
     cursor: pointer;
     border-radius: var(--radius-md);
     border-style: var(--tw-border-style);
@@ -352,16 +320,11 @@
     background-color: var(--color-red-400);
   }
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
+@property --tw-border-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
@@ -369,9 +332,8 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
+      --tw-border-style: solid;
     }
   }
 }
