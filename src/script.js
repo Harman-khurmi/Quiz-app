@@ -15,7 +15,7 @@ function loadQuestion() {
     question.textContent = questionData.question;
     quizArea.appendChild(question); 
 
-    // Create Answer Buttons
+    // Create New Answer Buttons
     questionData.answers.forEach((answer) => {
         const ansBtn = document.createElement('button');
         ansBtn.classList.add('ans-btn');
@@ -36,7 +36,7 @@ function checkAnswer(questionData, selectedBtn) {
     const correctAnswer = questionData.answers.find(answer => answer.correct);
     const allButtons = quizArea.querySelectorAll('.ans-btn');
     
-    // Disable all buttons and highlight the correct one
+    // Disable all the buttons and highlight the correct one
     allButtons.forEach((btn) => {
         btn.disabled = true;
         if (btn.textContent === correctAnswer.text) {
@@ -44,7 +44,7 @@ function checkAnswer(questionData, selectedBtn) {
         }
     });
 
-    // Update score and highlight wrong answer if applicable
+    // Update the score and highlight wrong answer if applicable
     if (selectedBtn.textContent === correctAnswer.text) {
         score++;     
     } else {
@@ -85,5 +85,5 @@ function showScore() {
     quizArea.appendChild(restartBtn);
 }
 
-// Initialize the quiz
+// Initialize the whole quiz
 loadQuestion();
